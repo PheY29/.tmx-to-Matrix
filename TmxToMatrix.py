@@ -79,10 +79,6 @@ class TmxMapToMatrix:
                 width = max(math.ceil(float(obj.width / 16)), 1)
                 height = max(math.ceil(float(obj.height / 16)), 1)
 
-                # print(f"{obj}, - x/y {x_start}, {y_start}, - w/h {width}, {height}, "
-                #       f"- obj width : {obj.width}, {(obj.width / 16)}, {math.ceil(float(obj.width / 16))}, "
-                #       f"- obj height : {obj.height}, {(obj.height / 16)}, {math.ceil(float(obj.height / 16))}")
-
                 for x in range(x_start, (x_start + width)):
                     for y in range(y_start, (y_start + height)):
                         self.map_matrix[y][x] = 0
@@ -97,15 +93,3 @@ class TmxMapToMatrix:
 if __name__ == "__main__":
     ttm = TmxMapToMatrix()
     ttm.run()
-    # print(dir(ttm.tmx_map))
-    # 'add_layer', 'add_tileset',
-    #  'allow_duplicate_names', 'background_color', 'custom_property_filename', 'custom_types', 'filename',
-    #  'from_xml_string', 'get_layer_by_name', 'get_object_by_id', 'get_object_by_name', 'get_tile_colliders',
-    #  'get_tile_gid', 'get_tile_image', 'get_tile_image_by_gid', 'get_tile_locations_by_gid', 'get_tile_properties',
-    #  'get_tile_properties_by_gid', 'get_tile_properties_by_layer', 'get_tileset_from_gid', 'gidmap', 'height',
-    #  'hexsidelength', 'image_loader', 'imagemap', 'images', 'infinite', 'invert_y', 'layernames', 'layers',
-    #  'load_all_tiles', 'map_gid', 'map_gid2', 'maxgid', 'nextlayerid', 'nextobjectid', 'objectgroups', 'objects',
-    #  'objects_by_id', 'objects_by_name', 'optional_gids', 'orientation', 'parse_json', 'parse_xml', 'properties',
-    #  'register_gid', 'register_gid_check_flags', 'reload_images', 'renderorder', 'set_tile_properties', 'staggeraxis',
-    #  'staggerindex', 'tile_properties', 'tiledgidmap', 'tiledversion', 'tileheight', 'tilesets',
-    #  'tilewidth', 'version', 'visible_layers', 'visible_object_groups', 'visible_tile_layers', 'width']
