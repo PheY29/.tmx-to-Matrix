@@ -16,7 +16,7 @@ class TmxMapToMatrix:
         self.tmx_map_name = self.obtain_tmx_map_name(self.folder_path)
         self.tmx_map = pytmx.TiledMap(self.tmx_map_name)
 
-        self.tile_size = self.tmx_map.tilewidth  # 16
+        self.tile_size = self.tmx_map.tilewidth
         self.map_width = self.tmx_map.width
         self.map_height = self.tmx_map.height
 
@@ -76,8 +76,8 @@ class TmxMapToMatrix:
             for obj in self.tmx_map.get_layer_by_name(layer):
                 x_start = int(obj.x // self.tile_size)
                 y_start = int(obj.y // self.tile_size)
-                width = max(math.ceil(float(obj.width / 16)), 1)
-                height = max(math.ceil(float(obj.height / 16)), 1)
+                width = max(math.ceil(float(obj.width / self.tile_size)), 1)
+                height = max(math.ceil(float(obj.height / self.tile_size)), 1)
 
                 for x in range(x_start, (x_start + width)):
                     for y in range(y_start, (y_start + height)):
